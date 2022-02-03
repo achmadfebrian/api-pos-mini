@@ -1,0 +1,20 @@
+$authorization = $this->Key->authorization();
+
+    if ($authorization == false) {
+      // Set the response and exit
+      $this->response([
+        'status' => false,
+        'message' => 'Empty token'
+      ], 404);
+    } else {
+
+      if ($authorization == $this->Key->beare()) {
+        #code
+      } else {
+        // Set the response and exit
+        $this->response([
+          'status' => false,
+          'message' => 'Invalid Token'
+        ], 404);
+      }
+    }
